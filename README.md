@@ -1,7 +1,4 @@
-You want the README to **only describe exactly what you built**, not extra explanation.
-Use this simple and accurate description.
 
----
 
 # Secure REST API with Authentication & Role-Based Access
 
