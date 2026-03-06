@@ -134,17 +134,6 @@ npm install
 npm run dev
 ```
 
----
 
-# Author
 
-Khushboo Kumari
-B.Tech CSE Student
 
----
-
-This README **accurately describes exactly what you built for the assignment**.
-
----
-
-If you want, I can also give you a **very short 4-line project description for the email when you submit the assignment**, which makes the submission look more professional.
