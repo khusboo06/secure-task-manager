@@ -12,7 +12,10 @@ const app = express()
 connectDB()
 
 // Middleware
-app.use(cors())
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}))
 app.use(helmet())
 app.use(express.json())
 
