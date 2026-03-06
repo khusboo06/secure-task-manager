@@ -2,6 +2,8 @@
 
 # Secure REST API with Authentication & Role-Based Access
 
+This project implements a secure REST API with JWT authentication, role-based access control, and CRUD operations, along with a simple React frontend UI to interact with the APIs.
+
 
 # Features
 
