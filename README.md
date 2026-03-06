@@ -1,96 +1,122 @@
-
-
-# Secure REST API with Authentication & Role-Based Access
+Secure REST API with Authentication & Role-Based Access
 
 This project implements a secure REST API with JWT authentication, role-based access control, and CRUD operations, along with a simple React frontend UI to interact with the APIs.
 
 
-# Features
 
-### Authentication
+Features
+Authentication
 
-* User registration
-* User login
-* Password hashing using **bcrypt**
-* JWT-based authentication
+User registration
 
-### Role-Based Access
+User login
 
-Two roles are supported:
+Password hashing using bcrypt
 
-**User**
+Secure JWT-based authentication
 
-* Can create tasks
-* Can view their tasks
-* Can update their tasks
-* Can delete their tasks
+Protected routes using middleware
 
-**Admin**
+Role-Based Access Control
 
-* Can view all tasks
-* Can manage any task
+The system supports two roles:
 
----
+User
 
-### CRUD APIs
+Create tasks
 
-CRUD operations for tasks:
+View their own tasks
 
-* Create task
-* Get tasks
-* Update task
-* Delete task
-* Toggle task status
+Update their own tasks
 
----
+Delete their own tasks
 
-# API Versioning
+Admin
 
-```text
+View all users' tasks
+
+Update any task
+
+Delete any task
+
+The backend automatically checks role permissions before allowing access to protected APIs.
+
+Task CRUD APIs
+
+Operations supported for tasks:
+
+Create task
+
+Get tasks
+
+Update task
+
+Delete task
+
+Toggle task status (pending / completed)
+
+API Versioning
+
+All APIs are versioned for scalability.
+
 /api/v1/auth
 /api/v1/tasks
-```
+API Documentation
 
----
+Swagger documentation is available for testing APIs.
 
-# API Documentation
+Local Swagger URL:
 
-Swagger documentation available at:
-
-```text
 http://localhost:5000/api-docs
-```
 
----
+Deployed API Swagger:
 
-# Tech Stack
+https://secure-task-manager-backend.onrender.com/api-docs
+Live Deployment
 
-### Backend
+Frontend (Vercel)
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT
-* bcrypt
-* Swagger
-* Helmet
-* CORS
+https://secure-task-manager.vercel.app
 
-### Frontend
+Backend API (Render)
 
-* React
-* TailwindCSS
-* Axios
-* React Router
-* React Hot Toast
-* Framer Motion
+https://secure-task-manager-backend.onrender.com
+Tech Stack
+Backend
 
----
+Node.js
 
-# Project Structure
+Express.js
 
-```
+MongoDB
+
+Mongoose
+
+JWT Authentication
+
+bcrypt
+
+Swagger API Docs
+
+Helmet (Security)
+
+CORS
+
+Frontend
+
+React
+
+TailwindCSS
+
+Axios
+
+React Router
+
+React Hot Toast
+
+Framer Motion
+
+Project Structure
 secure-task-manager
 │
 ├── backend
@@ -110,30 +136,66 @@ secure-task-manager
 │   │   └── App.jsx
 │
 └── README.md
-```
-
----
-
-# Setup
-
-## Backend
-
-```
+Installation
+Clone Repository
+git clone https://github.com/khusboo06/secure-task-manager.git
+cd secure-task-manager
+Backend Setup
 cd backend
 npm install
+
+Create .env file:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+CLIENT_URL=http://localhost:5173
+
+Start backend:
+
 npm start
-```
-
----
-
-## Frontend
-
-```
+Frontend Setup
 cd frontend
 npm install
+
+Create .env file:
+
+VITE_API_URL=http://localhost:5000/api/v1
+
+Run frontend:
+
 npm run dev
-```
+Example Role-Based Access
 
+Example user document:
 
+{
+ "name": "John",
+ "email": "john@test.com",
+ "role": "user"
+}
 
+Admin example:
+
+{
+ "name": "Admin",
+ "email": "admin@test.com",
+ "role": "admin"
+}
+
+Admins can view all tasks, while users can only manage their own tasks.
+
+Security Features
+
+Password hashing using bcrypt
+
+JWT token authentication
+
+Protected API routes
+
+Role-based authorization
+
+Helmet security middleware
+
+CORS protection
 
